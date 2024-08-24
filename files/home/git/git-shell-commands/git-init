@@ -1,0 +1,16 @@
+#!/bin/sh
+
+set -eo pipefail
+
+if [ $# -ne 1 ]; then
+    echo ""
+    echo "git-init"
+    echo "-----------------------------------------------------------------"
+    echo "Usage: git-init <reponame>"
+    echo ""
+    echo "Will create an empty repository with the name given in <reponame>"
+    exit 1
+fi
+
+git init --bare --initial-branch=main "/srv/git/$1.git" || echo "Created repository repos/$1.git"
+exit $?
