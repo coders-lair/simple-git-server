@@ -12,7 +12,10 @@ chown -R git:git /home/git /srv/git
 ln -sf /srv/git /home/git/repos
 ln -sf /srv/git /repos
 
-cat /home/git/.ssh/authorized_keys.d/* >/home/git/.ssh/authorized_keys
+for key_file in /home/git/.ssh/authorized_keys.d/*; do
+  cat $key_file;
+  echo
+done >/home/git/.ssh/authorized_keys
 
 "$@" &
 
