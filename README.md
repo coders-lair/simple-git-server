@@ -1,5 +1,7 @@
 # simple-git-server
 
+[![Docker Repository on Quay](https://quay.io/repository/coders-lair/simple-git-server/status?token=82d2c4bd-9c54-4b6e-9be4-f27435846edc "Docker Repository on Quay")](https://quay.io/repository/coders-lair/simple-git-server)
+
 This image is intended to provide a minimal, easily deployable git server that serves repositories via SSH only.
 Key features:
 
