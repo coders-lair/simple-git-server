@@ -29,6 +29,7 @@ RUN set -eux; \
 
 COPY files/home/git/git-shell-commands/* /home/git/git-shell-commands/
 COPY files/entrypoint.sh /entrypoint.sh
+COPY files/gather_keys.sh /gather_keys.sh
 
 EXPOSE 22
 

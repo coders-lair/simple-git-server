@@ -1,7 +1,9 @@
 PermitRootLogin no
 PubkeyAuthentication yes
 AuthenticationMethods publickey
-AuthorizedKeysFile .ssh/authorized_keys
+AuthorizedKeysFile none
+AuthorizedKeysCommand /gather_keys.sh
+AuthorizedKeysCommandUser git
 PasswordAuthentication no
 ChallengeResponseAuthentication no
 AllowTcpForwarding no
