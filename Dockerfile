@@ -1,18 +1,14 @@
-ARG ALPINE_VERSION=3.20.1
-ARG GIT_VERSION=2.45.2-r0
-ARG OPENSSH_VERSION=9.7_p1-r4
+LABEL org.opencontainers.image.source="https://github.com/coders-lair/simple-git-server"
+LABEL org.opencontainers.image.vendor="coders-lair.dev"
 
-FROM alpine:${ALPINE_VERSION}
-
-ARG GIT_VERSION
-ARG OPENSSH_VERSION
+FROM alpine:3.20.1
 
 WORKDIR /srv/git    
 
 RUN set -ex; \
     apk add --no-cache \
-        git=${GIT_VERSION} \
-        openssh=${OPENSSH_VERSION} \
+        git=2.45.2-r0 \
+        openssh=9.7_p1-r4 \
     ;
 
 # setup sshd
