@@ -1,3 +1,6 @@
+LABEL org.opencontainers.image.source="https://github.com/coders-lair/simple-git-server"
+LABEL org.opencontainers.image.vendor="coders-lair.dev"
+
 ARG ALPINE_VERSION=3.20.1
 ARG GIT_VERSION=2.45.2-r0
 ARG OPENSSH_VERSION=9.7_p1-r4
