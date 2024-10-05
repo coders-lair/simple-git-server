@@ -18,8 +18,13 @@ The first two options are recommended in case the SSH port gets remapped to a di
 # Multiple SSH keys
 
 Multiple authorized SSH keys can be mounted as individual files under `/home/git/.ssh/authorized_keys.d/`.
-The `/entrypoint.sh` script concatenates all of these files upon container start and overwrites `/home/git/.ssh/authorized_keys` with the result.
-This has been done in order to streamline kubernetes deployments, but has the downsides of not persisting keys added after container start (e.g. via `ssh-copy-id`) and not updating for keys mounted or unmounted after container start.
+`sshd` is configured to concatenate all of these files upon login request and using the result in lieu of a common `authorized_keys` file.
+This has been done in order to streamline kubernetes deployments.
+
+However, it comes with the following caveats:
+* `ssh-copy-id` will not work
+* `/home/git/.ssh/authorized_keys` will be ignored. (Workaround: move/mount it under `/home/git/.ssh/authorized_keys.d`)
+* Only files containing SSH public keys may be present in `/home/git/.ssh/authorized_keys.d/`
 
 # Creation of new git repositories
 
