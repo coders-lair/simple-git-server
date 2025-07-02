@@ -1,7 +1,7 @@
 LABEL org.opencontainers.image.source="https://github.com/coders-lair/simple-git-server"
 LABEL org.opencontainers.image.vendor="coders-lair.dev"
 
-FROM alpine:3.21.3
+FROM alpine:3.22.0
 
 WORKDIR /srv/git    
 
